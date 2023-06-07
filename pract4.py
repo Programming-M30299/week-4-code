@@ -1,40 +1,63 @@
-def sayHello():
-    print("Hello World")
+import os
 
 
-def sayHello2():
-    print("Hello")
-    print("World")
+def studentInfo():
+    course = input("What's your course? ")
+    studentID = input("What's your ID number? ")
+    print("Welcome to:\t" + course)
+    print("\n" * 2 + "Your ID number is:\t" + studentID[2:])
 
 
-def sayBye():
-    print("Goodbye Mars")
+def idFromEmail():
+    email = input("What's your email? ")  # 'up1234567@myportacuk'
+    parts = email.split("@")  # ['up1234567', 'myport.ac.uk']
+    upNumber = parts[0]  # 'up1234567'
+    print("Your ID is:\t" + upNumber[2:])  # '1234567'
 
 
-# TODO: Write `sayBye2` function here
+def personalDetails():
+    name = input("What's your name? ")
+    age = int(input("What's your age? "))
+    height = float(input("What's your height? "))
+    # print("name:\t{:>10}\nage:\t{:>10}\nheight:\t{:>10.2f}".format(name, age, height))
+    # print("name: {0:s} age: {1:d} height: {2:.2f}".format(name, age, height))
+    print(f"name:\t{name:>10}\nage:\t{age:>10}\nheight:\t{height:>10.2f}")
 
 
-# A simple kilograms to ounces conversion program
-# It asks for a weight in kilograms (for example 10)
-# and converts it to ounces (352.74)
-def kilos2Ounces():
-    kilos = float(input("Enter a weight in kilograms: "))
-    ounces = kilos * 35.274
-    print("The weight in ounces is", ounces)
+def readQuote():
+    print("Current directory:\t" + os.getcwd())
+    print("Files in current directory:\t" + str(os.listdir()))
+
+    # Change directory to the folder containing quotation.txt
+    os.chdir("week-4/textFiles")
+    # Checking if quotation.txt is in the current directory:
+    print("Current directory:\t" + os.getcwd())
+
+    inFile = open("quotation.txt", "r")
+
+    # use read() to read the whole file into a single string
+    content = inFile.read()
+    print(content)
+
+    # # use readLines() to read all lines into a list
+    # lines = inFile.readlines()
+    # for line in lines:
+    #     print(line[:-1])
+
+    # # use readLine() to read the first line
+    # line = inFile.readline()
+    # while line:
+    #     print(line)
+    #     line = inFile.readline()
+
+    inFile.close()
 
 
-def count():
-    for number in range(10):
-        print("Number is now: ", number)
-
-
-# A simple euros to pounds conversion program
-# It asks for a value in euros (for example 10)
-# and converts it to pounds (8.7)
-def euros2Pounds():
-    euros = float(input("Enter a value in euros: "))
-    pounds = euros * 0.87
-    print("The value in pounds is", pounds)
-
-
-# TODO: Write `dollars2Pounds` and the rest of your solutions for the programming exercises here
+def writeQuote():
+    os.chdir("week-4/textFiles")
+    outFile = open("myQuotation.txt", "w")
+    # content = "I love Python!\n(Matthew Poole)"
+    # outFile.write(content)
+    print("I love Python!", file=outFile)
+    print("(Matthew Poole)", file=outFile)
+    outFile.close()
