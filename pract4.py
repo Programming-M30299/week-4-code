@@ -32,6 +32,7 @@ def readQuote():
     os.chdir("week-4/textFiles")
     # Checking if quotation.txt is in the current directory:
     print("Current directory:\t" + os.getcwd())
+    print("Files in current directory:\t" + str(os.listdir()))
 
     inFile = open("quotation.txt", "r")
 
