@@ -29,7 +29,7 @@ def readQuote():
     print("Files in current directory:\t" + str(os.listdir()))
 
     # Change directory to the folder containing quotation.txt
-    os.chdir("week-4/textFiles")
+    os.chdir("textFiles")
     # Checking if quotation.txt is in the current directory:
     print("Current directory:\t" + os.getcwd())
     print("Files in current directory:\t" + str(os.listdir()))
@@ -55,7 +55,7 @@ def readQuote():
 
 
 def writeQuote():
-    os.chdir("week-4/textFiles")
+    os.chdir("textFiles")
     outFile = open("myQuotation.txt", "w")
 
     # You can use `write()` to write a single string
