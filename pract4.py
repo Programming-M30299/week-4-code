@@ -35,16 +35,16 @@ def readQuote():
 
     inFile = open("quotation.txt", "r")
 
-    # use read() to read the whole file into a single string
+    # You can use `read()` to read the whole file into a single string
     content = inFile.read()
     print(content)
 
-    # # use readLines() to read all lines into a list
+    # Or use `readLines()` to read all lines into a list
     # lines = inFile.readlines()
     # for line in lines:
     #     print(line[:-1])
 
-    # # use readLine() to read the first line
+    # Or use `readLine()` to read one line at a time
     # line = inFile.readline()
     # while line:
     #     print(line)
@@ -56,8 +56,13 @@ def readQuote():
 def writeQuote():
     os.chdir("week-4/textFiles")
     outFile = open("myQuotation.txt", "w")
-    # content = "I love Python!\n(Matthew Poole)"
-    # outFile.write(content)
+
+    # You can use `write()` to write a single string
     print("I love Python!", file=outFile)
     print("(Matthew Poole)", file=outFile)
+
+    # Or write both lines in one go separated by a newline character ('\n')
+    # content = "I love Python!\n(Matthew Poole)"
+    # outFile.write(content)
+
     outFile.close()
