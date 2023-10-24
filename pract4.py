@@ -8,19 +8,11 @@ def studentInfo():
     print("\n" * 2 + "Your ID number is:\t" + studentID[2:])
 
 
-def idFromEmail():
-    email = input("What's your email? ")  # 'up1234567@myportacuk'
-    parts = email.split("@")  # ['up1234567', 'myport.ac.uk']
-    upNumber = parts[0]  # 'up1234567'
-    print("Your ID is:\t" + upNumber[2:])  # '1234567'
-
-
 def personalDetails():
     name = input("What's your name? ")
     age = int(input("What's your age? "))
     height = float(input("What's your height? "))
     # print("name:\t{:>10}\nage:\t{:>10}\nheight:\t{:>10.2f}".format(name, age, height))
-    # print("name: {0:s} age: {1:d} height: {2:.2f}".format(name, age, height))
     print(f"name:\t{name:>10}\nage:\t{age:>10}\nheight:\t{height:>10.2f}")
 
 
