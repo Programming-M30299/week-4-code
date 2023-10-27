@@ -10,3 +10,4 @@ A repository containing the examples from the worksheet.
 - `.gitignore` - A file telling git to ignore certain files (e.g. `.pyc` files).
   You do not need to worry about this file for now.
 - `textFiles` - A folder containing the text files used in the examples: `quotation.txt`, `spending.txt` and `rainfall.txt`.
+- `stickfiguretest1.py`, `stickfiguretest2.py` and `stickfiguretest3.py` - Files containing the code for the in-class tests.
